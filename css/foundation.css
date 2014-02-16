@@ -39,8 +39,8 @@ body {
   font-size: 100%; }
 
 body {
-  background: white;
-  color: #222222;
+  background: #D5BC9B;
+  color: #DDD;
   padding: 0;
   margin: 0;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -150,6 +150,12 @@ select {
         display: table; }
       .row .row.collapse:after {
         clear: both; }
+      footer{
+          background: #F2F2F2;
+      }
+      footer p{
+          color: #222222;
+      }
 
 .column,
 .columns {
@@ -1000,7 +1006,7 @@ meta.foundation-mq-topbar {
   height: 45px;
   line-height: 45px;
   position: relative;
-  background: #333333;
+  background: #f00;
   margin-bottom: 0; }
   .top-bar ul {
     margin-bottom: 0;
@@ -1077,7 +1083,7 @@ meta.foundation-mq-topbar {
     height: auto;
     background: transparent; }
     .top-bar.expanded .title-area {
-      background: #333333; }
+      background: #f00; }
     .top-bar.expanded .toggle-topbar a {
       color: #888888; }
       .top-bar.expanded .toggle-topbar a span {
@@ -1095,7 +1101,7 @@ meta.foundation-mq-topbar {
     width: 100%;
     height: auto;
     display: block;
-    background: #333333;
+    background: #F33;
     font-size: 16px;
     margin: 0; }
   .top-bar-section .divider,
@@ -1113,7 +1119,7 @@ meta.foundation-mq-topbar {
     font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-size: 0.8125rem;
     font-weight: normal;
-    background: #333333; }
+    background: #f00; }
     .top-bar-section ul li > a.button {
       background: #d5bd9b;
       font-size: 0.8125rem;
@@ -1134,7 +1140,7 @@ meta.foundation-mq-topbar {
       .top-bar-section ul li > a.button.alert:hover {
         background: #a20c10; }
   .top-bar-section ul li:hover > a {
-    background: #272727;
+    background: #D00;
     color: white; }
   .top-bar-section ul li.active > a {
     background: #d5bd9b;
@@ -1200,7 +1206,7 @@ meta.foundation-mq-topbar {
 
 @media only screen and (min-width: 40.063em) {
   .top-bar {
-    background: #333333;
+    background: #FF0000;
     *zoom: 1;
     overflow: visible; }
     .top-bar:before, .top-bar:after {
@@ -1220,7 +1226,7 @@ meta.foundation-mq-topbar {
       position: relative;
       top: 7px; }
     .top-bar.expanded {
-      background: #333333; }
+      background: #333; }
 
   .contain-to-grid .top-bar {
     max-width: 62.5em;
@@ -1246,9 +1252,9 @@ meta.foundation-mq-topbar {
     .top-bar-section li:not(.has-form) a:not(.button) {
       padding: 0 15px;
       line-height: 45px;
-      background: #333333; }
+      background: #F00; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
-        background: #272727; }
+        background: #D00; }
     .top-bar-section li.active:not(.has-form) a:not(.button) {
       padding: 0 15px;
       line-height: 45px;
@@ -1740,7 +1746,7 @@ button, .button {
   border-color: #d8d8d8;
   margin-bottom: 1.25rem;
   padding: 1.25rem;
-  background: #f2f2f2; }
+  background: #F2F2F2; }
   .panel > :first-child {
     margin-top: 0; }
   .panel > :last-child {
@@ -1985,7 +1991,7 @@ button, .button {
       .orbit-container .orbit-slides-container > * .orbit-caption {
         position: absolute;
         bottom: 0;
-        background-color: rgba(51, 51, 51, 0.8);
+        background-color: rgba(255, 00, 00, 0.5);
         color: white;
         width: 100%;
         padding: 0.625rem 0.875rem;
@@ -2503,7 +2509,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
-  color: #222222;
+  color: #FFF;
   text-rendering: optimizeLegibility;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
