@@ -50,33 +50,32 @@
                 <img src="img/logo.png" />
             </div>
             <div class="large-6 columns">
-               <h1 class="circle">Laura Álvaro Fernández</h1>
+                <h1 class="circle">Laura Álvaro Fernández</h1>
             </div>
-
-<!--
-<div class="large-12 columns">
-<ul class="left button-group">
-<li><a href="#" class="button">Inicio</a></li>
-<li><a href="#" class="button">Aula</a></li>
-<li><a href="#" class="button">Biografía</a></li>
-<li><a href="#" class="button">Galería</a></li>
-<li><a href="#" class="button">Sigueme</a></li>
-</ul>
-</div>
--->
+            <!--
+            <div class="large-12 columns">
+            <ul class="left button-group">
+            <li><a href="#" class="button">Inicio</a></li>
+            <li><a href="#" class="button">Aula</a></li>
+            <li><a href="#" class="button">Biografía</a></li>
+            <li><a href="#" class="button">Galería</a></li>
+            <li><a href="#" class="button">Sigueme</a></li>
+            </ul>
+            </div>
+            -->
         </div>
 
         <!-- End Header and Nav -->
 
         <!-- First Band (Slider) -->
 
-        <div class="row">
-            <div class="large-12 columns">
+        <article class="row">
+            <section class="large-12 columns">
                 <!--
 <div id="slider">
 <img src="http://placehold.it/1000x400&text=[ img 1 ]" />
 </div>
--->
+                -->
                 <ul class="example-orbit" data-orbit>
                     <li>
                         <img src="http://placehold.it/1000x400&text=[ img 1 ]" alt="slide 1" />
@@ -98,34 +97,36 @@
                     </li>
                 </ul>
                 <hr />
-            </div>
-        </div>
-
+            </section>
+        </article>
         <!-- Three-up Content Blocks -->
-        <div class="row">
-            <div class="large-3 columns">
+        <article class="row">
+            <section class="large-3 columns">
+                <a href="#" data-reveal-id="Modal1" class="button accordion">Ver más</a></br>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h4>This is a content section.</h4>
                 <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-            </div>
+            </section>
+            <section class="large-3 columns">
+                <a href="#" data-reveal-id="Modal2" class="button accordion">Ver más</a></br>
+                <img src="http://placehold.it/400x300&text=[img]" />
+                <h4>This is a content section.</h4>
+                <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+            </section>
 
-            <div class="large-3 columns">
+            <section class="large-3 columns">
+                <a href="#" data-reveal-id="Modal3" class="button accordion">Ver más</a></br>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h4>This is a content section.</h4>
                 <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-            </div>
-
-            <div class="large-3 columns">
+            </section>
+            <section class="large-3 columns">
+                <a href="#" data-reveal-id="Modal4" class="button accordion">Ver más</a></br>
                 <img src="http://placehold.it/400x300&text=[img]" />
                 <h4>This is a content section.</h4>
                 <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-            </div>
-            <div class="large-3 columns">
-                <img src="http://placehold.it/400x300&text=[img]" />
-                <h4>This is a content section.</h4>
-                <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-            </div>
-        </div>
+            </section>
+        </article>
 
         <!-- Call to Action Panel -->
         <div class="row">
@@ -138,14 +139,7 @@
                         <div class="large-9 columns">
                             <p>We'd love to hear from you, you attractive person you.</p>
                         </div>
-                         <div id="myModal" class="reveal-modal" data-reveal>
-                              <h2>Awesome. I have it.</h2>
-                              <p class="lead">Your couch.  It is mine.</p>
-                              <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
-                              <a class="close-reveal-modal">&#215;</a>
-                         </div>
-                         <a href="#" data-reveal-id="myModal" class="radius button"></a>
-                         <div class="reveal-modal-bg" style="display: none">Modal</div>
+                        <div class="reveal-modal-bg" style="display: none">Modal</div>
                         <div class="large-3 columns">
                             <a href="mailto:antonioamgm178@gmail.com" class="radius button right">Contact Us</a>
                         </div>
@@ -185,6 +179,103 @@
                 </div>
             </div>
         </footer>
+        <!--Elementos que se lanzan desde los apartados de contenido insertados en ver más-->
+        <section id="Modal1" class="reveal-modal xlarge" data-reveal="">
+            <h2>Modal 1</h2>
+            <a class="close-reveal-modal">&#215;</a>
+            <ul class="orbit-slides-container" data-orbit>
+                <li>
+                    <img src="http://placehold.it/700x400&text=[ img 1 ]" alt="slide 1" />
+                    <div class="orbit-caption">
+                        Imagen 1
+                    </div>
+                </li>
+                <li>
+                    <img src="http://placehold.it/800x400&text=[ img 2 ]" alt="slide 2" />
+                    <div class="orbit-caption">
+                        Imagen 2
+                    </div>
+                </li>
+                <li>
+                    <img src="http://placehold.it/900x400&text=[ img 3 ]" alt="slide 3" />
+                    <div class="orbit-caption">
+                        Imagen 3
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section id="Modal2" class="reveal-modal xlarge" data-reveal="">
+            <h2>Modal 2</h2>
+            <a class="close-reveal-modal">&#215;</a>
+            <ul class="orbit-slides-container" data-orbit>
+                <li>
+                    <img src="http://placehold.it/400x400&text=[ img 1 ]" alt="slide 1" />
+                    <div class="orbit-caption">
+                        Imagen 1
+                    </div>
+                </li>
+                <li>
+                    <img src="http://placehold.it/400x400&text=[ img 2 ]" alt="slide 2" />
+                    <div class="orbit-caption">
+                        Imagen 2
+                    </div>
+                </li>
+                <li>
+                    <img src="http://placehold.it/400x400&text=[ img 3 ]" alt="slide 3" />
+                    <div class="orbit-caption">
+                        Imagen 3
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section id="Modal3" class="reveal-modal xlarge" data-reveal="">
+            <h2>Modal 3</h2>
+            <a class="close-reveal-modal">&#215;</a>
+            <ul class="orbit-slides-container" data-orbit>
+                <li>
+                    <img src="http://placehold.it/100x400&text=[ img 1 ]" alt="slide 1" />
+                    <div class="orbit-caption">
+                        Imagen 1
+                    </div>
+                </li>
+                <li>
+                    <img src="http://placehold.it/200x400&text=[ img 2 ]" alt="slide 2" />
+                    <div class="orbit-caption">
+                        Imagen 2
+                    </div>
+                </li>
+                <li>
+                    <img src="http://placehold.it/600x400&text=[ img 3 ]" alt="slide 3" />
+                    <div class="orbit-caption">
+                        Imagen 3
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section id="Modal4" class="reveal-modal xlarge" data-reveal="">
+            <h2>Modal 4</h2>
+           <a class="close-reveal-modal">&#215;</a>
+            <ul class="ororbit-slides-container" data-orbit>
+                <li>
+                    <img src="http://placehold.it/1000x1000&text=[ img 1 ]" alt="slide 1" />
+                    <div class="orbit-caption">
+                        Imagen 1
+                    </div>
+                </li>
+                <li>
+                    <img src="http://placehold.it/1000x1000&text=[ img 2 ]" alt="slide 2" />
+                    <div class="orbit-caption">
+                        Imagen 2
+                    </div>
+                </li>
+                <li>
+                    <img src="http://placehold.it/1000x1000&text=[ img 3 ]" alt="slide 3" />
+                    <div class="orbit-caption">
+                        Imagen 3
+                    </div>
+                </li>
+            </ul>
+        </section>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>');</script>
         <script src="js/vendor/jquery.js"></script>
@@ -204,14 +295,21 @@
         </script>
         -->
         <script>
-        /*Funcióm google analytics para hacer seguimiento desde mi cuenta gmail creada por Googel analytics*/
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            /*Funcióm google analytics para hacer seguimiento desde mi cuenta gmail creada por Googel analytics*/
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-48181443-1', 'lauraalvaro.es');
-        ga('send', 'pageview');
+            ga('create', 'UA-48181443-1', 'lauraalvaro.es');
+            ga('send', 'pageview');
         </script>
     </body>
 </html>
