@@ -1,12 +1,14 @@
 //empieza aqui
 var creamail = {
     limita: function(maxCaracter) {
-        var cuerpo = document.getElementById("contenido");
-        if (cuerpo.value.length > maxCaracter) {
-            return false;
-        } else {
-            return true;
+        with (document.formcorreo) {
+            if (contenido.value.length > maxCaracter) {
+                return false;
+            } else {
+                return true;
+            }
         }
+
     },
     sendEmail: function() {
         var fmail = "mailto:";
@@ -14,12 +16,14 @@ var creamail = {
         var mimail = "art";
         var enlaces = {c: "cc=", s: "subject=", i: "?", am: "&", b: "body=", a: "@"};
         var asunto = "Envío de correo desde la página Web de lauraalvaro.es";
+        var formemail = document.formcorreo;
         debugger;
-        if (this.limita(100) && this.formCheck()) {
+        if (this.formCheck()) {
             var link = fmail//mailto
                     + mimail + enlaces.a + sitio//correo completo
                     + enlaces.i + enlaces.s + asunto; //interrogante + asunto
-            window.location.href = link;
+            formemail.action = link;
+            //window.location.href = link;
             return true;
         } else {
             return false;
@@ -30,23 +34,26 @@ var creamail = {
         var error = "";
         debugger;
         with (document.formcorreo) {
+            //alert(contenido.value);
             if (usuario.value === "") {
                 //alert("El nombre es obligatorio y debe ser texto");
-                error = document.getElementById("errorUsuario");
+                error = errorUsuario;
                 error.innerHTML = "El nombre es obligatorio y debe ser texto";
                 usuario.focus();
             }
             else if (correo.value === "") {
                 //alert("Por favor tu email quién envia el correo.");
-                error = document.getElementById("errorCorreo");
+                error = errorCorreo;
                 error.innerHTML = "El correo electrónico es obligatorio.";
                 correo.focus();
             }
-            else if (contenido.value === "") {
-                alert("Rellena el contenido del correo");
+            else if (contenido.value === "" && this.limita(100)) {
+                //alert("Rellena el contenido del correo");
+                error = errorContenido;
+                error.innerHTML = "El contenido del correo es obligatorio.";
                 contenido.focus();
             }
-            else if (this.checkMultiple === "") {
+            else if (this.checkMultiple() === "") {
                 if (confirm("Acabas de mandar un email utilizando este formulario, ¿estás seguro de que quieres mandar otro?")) {
                     this.process();
                     passed = true;
@@ -83,22 +90,42 @@ var creamail = {
     },
     process: function() {
         setCookie("emailenviado", "true");
-        with (document.forcorreo) {
-            if (Subject.selectedIndex === 1)
-                action = "mailto:vilber72@hotmail.com?subject=Sugerencias";
+        var fmail = "mailto:";
+        var sitio = "lauraalvaro.es";
+        var mimail = "art";
+        var enlaces = {c: "cc=", s: "subject=", i: "?", am: "&", b: "body=", a: "@"};
+        var asunto = {su: 'Sugerencias', op: 'Opinión', inf: 'Informe de errores', re: 'Recomendar', enro: 'Enlaces rotos', ot: 'Otros'};
+        debugger;
+        with (document.formcorreo) {
+            if (listasunto.selectedIndex === 1)
+                action = fmail//mailto
+                        + mimail + enlaces.a + sitio//correo completo
+                        + enlaces.i + enlaces.s + asunto.su;
 //else if (Subject.selectedIndex == 2) action = "mailto:vilber72@hotmail.com?subject=Opinión";
-            else if (Subject.selectedIndex === 2)
-                action = "mailto:" + correo.value + "?subject=Opinión";
-            else if (Subject.selectedIndex === 3)
-                action = "mailto:vilber72@hotmail.com?subject=Informe errores";
-            else if (Subject.selectedIndex === 4)
-                action = "mailto:vilber72@hotmail.com?subject=Enviar script/código";
-            else if (Subject.selectedIndex === 5)
-                action = "mailto:vilber72@hotmail.com?subject=Recomendar";
-            else if (Subject.selectedIndex === 6)
-                action = "mailto:vilber72@hotmail.com?subject=Enlaces rotos";
+            else if (listasunto.selectedIndex === 2)
+                action = fmail//mailto
+                        + mimail + enlaces.a + sitio//correo completo
+                        + enlaces.i + enlaces.s + asunto.op;
+            else if (listasunto.selectedIndex === 3)
+                action = fmail//mailto
+                        + mimail + enlaces.a + sitio//correo completo
+                        + enlaces.i + enlaces.s + asunto.inf;
+            else if (listasunto.selectedIndex === 4)
+                action = fmail//mailto
+                        + mimail + enlaces.a + sitio//correo completo
+                        + enlaces.i + enlaces.s + asunto.re;
+            else if (listasunto.selectedIndex === 5)
+                action = fmail//mailto
+                        + mimail + enlaces.a + sitio//correo completo
+                        + enlaces.i + enlaces.s + asunto.enro;
+            else if (listasunto.selectedIndex === 6)
+                action = fmail//mailto
+                        + mimail + enlaces.a + sitio//correo completo
+                        + enlaces.i + enlaces.s + asunto.ot;
             else
-                action = "mailto:vilber72@hotmail.com?subject=Otros";
+                action = fmail//mailto
+                        + mimail + enlaces.a + sitio//correo completo
+                        + enlaces.i + enlaces.s + asunto.ot;
         }
     },
     setCookie: function(name, value, expires) {
@@ -112,21 +139,22 @@ var creamail = {
         }
     },
     setName: function() {
-    var expdate = new Date();
-    expdate.setTime(expdate.getTime() + (24 * 60 * 60 * 1000 * 365));
-    var prompt = i = document.formcorreo.usuario.value;
-    setCookie("name", i, expdate);
-},
- getInfo:function() {
-    var now = new Date();
-    document.formcorreo.info.value += " Navegador: " + navigator.userAgent;
-    document.formcorreo.info.value += " ";
-    document.formcorreo.info.value += " Fecha de envío: " + now;
-}
+        var expdate = new Date();
+        expdate.setTime(expdate.getTime() + (24 * 60 * 60 * 1000 * 365));
+        var prompt = i = document.formcorreo.usuario.value;
+        setCookie("name", i, expdate);
+    },
+    getInfo: function() {
+        var now = new Date();
+        document.formcorreo.info.value += " Navegador: " + navigator.userAgent;
+        document.formcorreo.info.value += " ";
+        document.formcorreo.info.value += " Fecha de envío: " + now;
+    }
 };
 //termina aqui
 window.onload = function() {
     creamail.getInfo();
     creamail.getName();
+
 };
 

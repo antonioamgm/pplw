@@ -719,9 +719,7 @@
         <section id="formcontacto" class="reveal-modal small" data-reveal>
             <a class="close-reveal-modal">&#215;</a>
             <h2>Formulario envío de correo</h2>
-            <form id="formcorreo" name="formcorreo" action="mailto:art@lauraalvaro.es?subject=Correo" method="POST" enctype="text/plain" onsubmit=" return creamail.sendEmail()" data-abide>
-
-
+            <form id="formcorreo" name="formcorreo" method="POST" enctype="text/plain" onsubmit=" return creamail.sendEmail()" data-abide>
                 <div class="large-9">
                     <label>Tu nombre <small>required</small>
                         <input name="usuario" id="usuario" type="text" placeholder="Nombre" required pattern="alpha" size="100">
@@ -735,10 +733,24 @@
                     <small id="errorCorreo" class="error">El correo electrónico es obligatorio.</small>
                 </div>
                 <div class="large-9">
-                    <label>Contenido <small>required</small>
-                        <textarea name="contenido" id="contenido" placeholder="Escribe tu correo" required rows="10" cols="50"> </textarea>
+                    <label>Asunto<small>required</small>
+                        <input list="asunto" name="listasunto" id="listasunto"  required>
+                        <datalist id="asunto">
+                            <option value="Sugerencias">
+                            <option value="Opinión">
+                            <option value="Informe de errores">
+                            <option value="Recomendar">
+                            <option value="Enlaces rotos">
+                            <option value="Otros">    
+                        </datalist> 
                     </label>
-                    <small id="errorContenido" class="error texarea">El contenido es obligatorio.</small>
+                    <small id="errorAsunto" class="error">El asunto es obligatorio.</small>
+                </div>
+                <div class="large-9">
+                    <label>Contenido <small>required</small>
+                        <textarea name="contenido" id="contenido" placeholder="Escribe tu correo" required rows="20" cols="50"></textarea>
+                    </label>
+                    <small id="errorContenido" class="error">El contenido del correo es obligatorio.</small>
                     <input type="hidden" id="info" name="info" />
                     <input id='enviar' type="submit" value="Enviar">
                 </div>
@@ -747,12 +759,12 @@
         <script type="text/javascript" src="js/vendor/modernizr.js"></script>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script type="text/javascript">
-                        window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>');
+                window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>');
         </script>
         <script type="text/javascript" src="js/vendor/jquery.js"></script>
         <script type="text/javascript" src="js/foundation.min.js"></script>
         <script>
-                        $(document).foundation();
+                $(document).foundation();
         </script>
         <!--
         <script>
