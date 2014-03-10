@@ -189,7 +189,7 @@
                     <div class="row">
                         <div class="large-9 columns">
                             <p>
-                                Me gustaria que me enviaras un correo dandome tu opinión.
+                               Enviame un correo.
                             </p>
                         </div>
                         <div class="large-3 columns">
@@ -717,9 +717,9 @@
             </ul>
         </section>
         <section id="formcontacto" class="reveal-modal small" data-reveal>
-            <a class="close-reveal-modal">&#215;</a>
+            <a id="cierraform" class="close-reveal-modal">&#215;</a>
             <h2>Formulario envío de correo</h2>
-            <form id="formcorreo" name="formcorreo" method="POST" enctype="text/plain" onsubmit=" return creamail.sendEmail()" data-abide>
+            <form id="formcorreo" name="formcorreo" method="POST" enctype="text/plain" onsubmit=" return creamail.formCheck()" data-abide>
                 <div class="large-9">
                     <label>Tu nombre <small>required</small>
                         <input name="usuario" id="usuario" type="text" placeholder="Nombre" required pattern="alpha" size="100">

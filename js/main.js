@@ -1,5 +1,6 @@
 //empieza aqui
 var creamail = {
+	//limita el número de caracteres del textarea
     limita: function(maxCaracter) {
         with (document.formcorreo) {
             if (contenido.value.length > maxCaracter) {
@@ -10,25 +11,7 @@ var creamail = {
         }
 
     },
-    sendEmail: function() {
-        var fmail = "mailto:";
-        var sitio = "lauraalvaro.es";
-        var mimail = "art";
-        var enlaces = {c: "cc=", s: "subject=", i: "?", am: "&", b: "body=", a: "@"};
-        var asunto = "Envío de correo desde la página Web de lauraalvaro.es";
-        var formemail = document.formcorreo;
-        debugger;
-        if (this.formCheck()) {
-            var link = fmail//mailto
-                    + mimail + enlaces.a + sitio//correo completo
-                    + enlaces.i + enlaces.s + asunto; //interrogante + asunto
-            formemail.action = link;
-            //window.location.href = link;
-            return true;
-        } else {
-            return false;
-        }
-    },
+    //comprueba que el formulario tiene los campos rellenos
     formCheck: function() {
         var passed = false;
         var error = "";
@@ -58,7 +41,6 @@ var creamail = {
                     this.process();
                     passed = true;
                 }
-
             }
             else {
                 this.process();
@@ -67,29 +49,15 @@ var creamail = {
         }
         return passed;
     },
+    //comprueba si se ha enviado un email
     checkMultiple: function() {
         if (this.getCookie("emailenviado") === 'true')
             return true;
         else
             return false;
     },
-    getCookie: function(name) {
-        var cname = name + "=";
-        var dc = document.cookie;
-        if (dc.length > 0) {
-            begin = dc.indexOf(cname);
-            if (begin !== -1) {
-                begin += cname.length;
-                end = dc.indexOf(";", begin);
-                if (end === -1)
-                    end = dc.length;
-                return unescape(dc.substring(begin, end));
-            }
-        }
-        return null;
-    },
     process: function() {
-        setCookie("emailenviado", "true");
+        this.setCookie("emailenviado", "true");
         var fmail = "mailto:";
         var sitio = "lauraalvaro.es";
         var mimail = "art";
@@ -97,45 +65,71 @@ var creamail = {
         var asunto = {su: 'Sugerencias', op: 'Opinión', inf: 'Informe de errores', re: 'Recomendar', enro: 'Enlaces rotos', ot: 'Otros'};
         debugger;
         with (document.formcorreo) {
-            if (listasunto.selectedIndex === 1)
+        	this.setCookie("correo",correo.value);
+        	this.setCookie("usuario",usuario.value);
+            if (listasunto.value === asunto.su){           
                 action = fmail//mailto
                         + mimail + enlaces.a + sitio//correo completo
                         + enlaces.i + enlaces.s + asunto.su;
 //else if (Subject.selectedIndex == 2) action = "mailto:vilber72@hotmail.com?subject=Opinión";
-            else if (listasunto.selectedIndex === 2)
+            }else if (listasunto.value === asunto.op){
                 action = fmail//mailto
                         + mimail + enlaces.a + sitio//correo completo
                         + enlaces.i + enlaces.s + asunto.op;
-            else if (listasunto.selectedIndex === 3)
+            }else if (listasunto.value === asunto.inf){            
                 action = fmail//mailto
                         + mimail + enlaces.a + sitio//correo completo
                         + enlaces.i + enlaces.s + asunto.inf;
-            else if (listasunto.selectedIndex === 4)
+            }else if (listasunto.value ===asunto.re){
                 action = fmail//mailto
                         + mimail + enlaces.a + sitio//correo completo
                         + enlaces.i + enlaces.s + asunto.re;
-            else if (listasunto.selectedIndex === 5)
+            }else if (listasunto.value === asunto.enro){
                 action = fmail//mailto
                         + mimail + enlaces.a + sitio//correo completo
                         + enlaces.i + enlaces.s + asunto.enro;
-            else if (listasunto.selectedIndex === 6)
+            }else if (listasunto.value === asunto.ot){
                 action = fmail//mailto
                         + mimail + enlaces.a + sitio//correo completo
                         + enlaces.i + enlaces.s + asunto.ot;
-            else
+            }else{
                 action = fmail//mailto
                         + mimail + enlaces.a + sitio//correo completo
                         + enlaces.i + enlaces.s + asunto.ot;
+            } 
         }
     },
-    setCookie: function(name, value, expires) {
-        document.cookie = name + "=" + escape(value) +
-                ((expires !== null) ? "; expires=" + expires.toGMTString() : "")
-                + "; path=/";
+    setCookie: function(cname,cvalue,exdays) {
+        var d = new Date();
+		d.setTime(d.getTime()+(exdays*24*60*60*1000));
+		var expires = "expires="+d.toGMTString();
+		document.cookie = cname + "=" + cvalue + "; " + expires;
     },
+    getCookie: function(cname) {
+        var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++)
+  		{
+  			var c = ca[i].trim();
+  			if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+		}
+		return "";
+    },
+    checkCookie:function (){
+		var user=getCookie("correo");
+		if (user!=""){
+  			alert("Welcome again " + user);
+  		}else{
+  		user = prompt("Please enter your name:","");
+  		if (user!="" && user!=null){
+    		setCookie("username",user,365);
+    		}
+  		}
+	},
     getName: function() {
-        if (getCookie("name") !== null) {
-            document.formcorreo.usuario.value = getCookie("emailname");
+        if (this.getCookie("correo") !== null) {
+            document.formcorreo.correo.value = this.getCookie("correo");
+            document.formcorreo.usuario.value= this.getCookie("usuario");
         }
     },
     setName: function() {
@@ -157,4 +151,7 @@ window.onload = function() {
     creamail.getName();
 
 };
+
+
+
 
