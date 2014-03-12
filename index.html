@@ -128,12 +128,12 @@
                             Arte
                         </div>
                     </li>
-                    <li>
+                   <!-- <li>
                         <img src="img/Slaider/ATISTICIMPULSE.gif" alt="Impulso artistico" />
                         <div class="orbit-caption">
                             Impulso artistico
                         </div>
-                    </li>
+                    </li>-->
                 </ul>
                 <hr />
             </section>
@@ -189,7 +189,7 @@
                     <div class="row">
                         <div class="large-9 columns">
                             <p>
-                               Enviame un correo.
+                                Enviame un correo.
                             </p>
                         </div>
                         <div class="large-3 columns">
@@ -721,19 +721,19 @@
             <h2>Formulario envío de correo</h2>
             <form id="formcorreo" name="formcorreo" method="POST" enctype="text/plain" onsubmit=" return creamail.formCheck()" data-abide>
                 <div class="large-9">
-                    <label>Tu nombre <small>required</small>
-                        <input name="usuario" id="usuario" type="text" placeholder="Nombre" required pattern="alpha" size="100">
+                    <label for="usuario">Tu nombre <small>required</small>
+                        <input name="usuario" id="usuario" type="text" placeholder="Nombre" required pattern="alpha" size="100"/>
                     </label>
                     <small id="errorUsuario" class="error">El nombre es obligatorio y debe ser texto.</small>
                 </div>
                 <div class="large-9">
-                    <label>E-mail <small>required</small>
-                        <input name="correo" id="correo" type="email" pattern="email" placeholder="tumail@domio.com" required size="50">
+                    <label for="correo">E-mail <small>required</small>
+                        <input name="correo" id="correo" type="email" pattern="email" placeholder="tumail@domio.com" required size="50"/>
                     </label>
                     <small id="errorCorreo" class="error">El correo electrónico es obligatorio.</small>
                 </div>
                 <div class="large-9">
-                    <label>Asunto<small>required</small>
+                    <label for="listasunto">Asunto<small>required</small>
                         <input list="asunto" name="listasunto" id="listasunto"  required>
                         <datalist id="asunto">
                             <option value="Sugerencias">
@@ -747,12 +747,42 @@
                     <small id="errorAsunto" class="error">El asunto es obligatorio.</small>
                 </div>
                 <div class="large-9">
-                    <label>Contenido <small>required</small>
+                    <label for="contenido">Contenido <small>required</small>
                         <textarea name="contenido" id="contenido" placeholder="Escribe tu correo" required rows="20" cols="50"></textarea>
                     </label>
                     <small id="errorContenido" class="error">El contenido del correo es obligatorio.</small>
-                    <input type="hidden" id="info" name="info" />
-                    <input id='enviar' type="submit" value="Enviar">
+                </div>
+                <input type="hidden" id="info" name="info" />
+                <input id="enviar" type="submit" value="Enviar"/>
+            </form>
+        </section>
+        <section id="datoscorreo" class="reveal-modal small" data-reveal>
+            <a class="close-reveal-modal">&#215;</a>
+            <h2>Datos enviados</h2>
+            <form id="formenv" name="formenv" method="POST" enctype="text/plain" data-abide>
+                <div class="large-9">
+                    <label for="usuarioenv" >Tu nombre <small>required</small>
+                        <input name="usuarioenv" id="usuarioenv" type="text" placeholder="Nombre" required pattern="alpha" size="100" disabled>
+                    </label>
+                    <small id="errorUsuarioenv" class="error">El nombre es obligatorio y debe ser texto.</small>
+                </div>
+                <div class="large-9">
+                    <label for="correoenv">E-mail <small>required</small>
+                        <input name="correoenv" id="correoenv" type="email" pattern="email" placeholder="tumail@domio.com" required size="50" disabled>
+                    </label>
+                    <small id="errorCorreoenv" class="error">El correo electrónico es obligatorio.</small>
+                </div>
+                <div class="large-9">
+                    <label for="asuntoenv">Asunto <small>required</small>
+                        <input name="asuntoenv" id="asuntoenv" type="email" pattern="email" placeholder="Asunto" required size="50" disabled>
+                    </label>
+                    <small id="errorAsuntoenv" class="error">El asunto es obligatorio.</small>
+                </div>
+                <div class="large-9">
+                    <label for="contenidoenv">Contenido <small>required</small>
+                        <textarea name="contenidoenv" id="contenidoenv" placeholder="Escribe tu correo" required rows="20" cols="50" disabled></textarea>
+                    </label>
+                    <small id="errorContenidoenv" class="error">El contenido del correo es obligatorio.</small>
                 </div>
             </form>
         </section>
