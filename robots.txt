@@ -1,4 +1,8 @@
 # www.robotstxt.org/
 # www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
-
+# robots.txt generated at http://www.mcanerin.com
 User-agent: *
+Disallow: 
+Crawl-delay: 60
+Disallow: /cgi-bin/
+Sitemap: http://www.lauraalvaro.com

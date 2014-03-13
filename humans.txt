@@ -6,3 +6,12 @@
   Standards: HTML5, CSS3
   Components: jQuery, Orbit, Reveal
   Software: Sublime, Git, Sass
+/* TEAM */
+	Desing: Laura Álvaro Fernández
+        Twitter: @LauraAlvaroF
+        From:Logroño, La Rioja, Spain
+
+	Web designer: Antonio Aguilera Macías
+        Contact: hello [at] humanstxt.org
+	Twitter: @antonioamgm
+	From:Logroño, La Rioja, Spain

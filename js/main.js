@@ -144,9 +144,8 @@ var creamail = {
     },
     getInfo: function() {
         var now = new Date();
-        document.formcorreo.info.value += " Navegador: " + navigator.userAgent;
-        document.formcorreo.info.value += " ";
-        document.formcorreo.info.value += " Fecha de envío: " + now;
+        document.formcorreo.infoNavegador.value += " Navegador: " + navigator.userAgent;
+        document.formcorreo.infoFecha.value += " Fecha de envío: " + now;
     }
 };
 //termina aqui
