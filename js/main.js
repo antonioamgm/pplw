@@ -11,7 +11,7 @@ var creamail = {
     //comprueba que el formulario tiene los campos rellenos
     formCheck: function() {
         var passed = false;
-        var error = "";
+        //var error = "";
         var enviado = this.getCookie("emailenviado");
 //        debugger;
         with (document.formcorreo) {
@@ -50,7 +50,7 @@ var creamail = {
     //comprueba si se ha enviado un email
     checkMultiple: function() {
         var vCookie = this.getCookie("emailenviado");
-        if (vCookie === 1)
+        if (vCookie === "1")
             return 1;
         else
             return 0;
