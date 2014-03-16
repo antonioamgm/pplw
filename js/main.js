@@ -153,3 +153,22 @@ window.onload = function() {
     creamail.getInfo();
     creamail.getName();
 };
+//crea la barra de herramientas del idioma
+/*function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+            {
+                pageLanguage: 'es',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                multilanguagePage: true, gaTrack: true,
+                gaId: 'UA-48181443-1'},
+    'google_translate_element');
+}*/
+function googleTranslateElementInit() {
+ new google.translate.TranslateElement(
+          {
+            pageLanguage: 'es', 
+    multilanguagePage: true, 
+    gaTrack: true, 
+    gaId: 'UA-48181443-1'}, 
+'google_translate_element');
+}

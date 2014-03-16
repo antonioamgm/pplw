@@ -1,3 +1,32 @@
 ﻿#listabiografia{
-  color:rgb(87, 73, 64);
+    color:rgb(87, 73, 64);
+}
+#google_translate_element{
+    background-color: rgb(213, 188, 155);
+}
+.skiptranslate{
+    background-color: rgb(213, 188, 155);
+}
+.goog-te-banner-frame {
+left: 0px;
+top: 0px;
+height: 39px;
+width: 100%;
+z-index: 10000001;
+position: absolute;
+border: none;
+border-bottom: 1px solid rgb(107, 144, 218);
+margin: 0;
+-moz-box-shadow: 0 0 8px 1px #999999;
+-webkit-box-shadow: 0 0 8px 1px rgb(153, 153, 153);
+box-shadow: 0 0 8px 1px rgb(153, 153, 153);
+_position: absolute;
+}
+.skiptranslate {
+background-color: rgb(213, 188, 155);
+}
+*, *:before, *:after {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
 }
