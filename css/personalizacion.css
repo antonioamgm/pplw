@@ -1,4 +1,4 @@
-﻿#listabiografia{
+#listabiografia{
     color:rgb(87, 73, 64);
 }
 #google_translate_element{
@@ -21,9 +21,6 @@ margin: 0;
 -webkit-box-shadow: 0 0 8px 1px rgb(153, 153, 153);
 box-shadow: 0 0 8px 1px rgb(153, 153, 153);
 _position: absolute;
-}
-.skiptranslate {
-background-color: rgb(213, 188, 155);
 }
 *, *:before, *:after {
 -moz-box-sizing: border-box;
