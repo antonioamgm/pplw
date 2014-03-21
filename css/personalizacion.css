@@ -27,3 +27,6 @@ _position: absolute;
 -webkit-box-sizing: border-box;
 box-sizing: border-box;
 }
+#topbaja{
+    top:40px;
+}

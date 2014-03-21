@@ -149,26 +149,40 @@ var creamail = {
     }
 };
 //termina aqui
+function CambiaEstilo() {
+    debugger;
+    var elemento=document.getElementById('navFija');
+    if (elemento.style.top > '0px') {
+        elemento.className = 'fix-height';
+    } else {
+        elemento.className = 'fixed';
+    }
+}
 window.onload = function() {
     creamail.getInfo();
     creamail.getName();
 };
 //crea la barra de herramientas del idioma
 /*function googleTranslateElementInit() {
+ new google.translate.TranslateElement(
+ {
+ pageLanguage: 'es',
+ layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+ multilanguagePage: true, gaTrack: true,
+ gaId: 'UA-48181443-1'},
+ 'google_translate_element');
+ }*/
+function googleTranslateElementInit() {
     new google.translate.TranslateElement(
             {
                 pageLanguage: 'es',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                multilanguagePage: true, gaTrack: true,
+                multilanguagePage: true,
+                gaTrack: true,
                 gaId: 'UA-48181443-1'},
     'google_translate_element');
-}*/
-function googleTranslateElementInit() {
- new google.translate.TranslateElement(
-          {
-            pageLanguage: 'es', 
-    multilanguagePage: true, 
-    gaTrack: true, 
-    gaId: 'UA-48181443-1'}, 
-'google_translate_element');
+}
+
+
+function onclickIdioma() {
+    document.getElementById(':0.targetLanguage').onchange=CambiaEstilo;
 }
