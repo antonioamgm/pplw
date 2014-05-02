@@ -30,3 +30,7 @@ box-sizing: border-box;
 #topbaja{
     top:40px;
 }
+.oculto{
+    visibility: hidden;
+    display: none;
+}
